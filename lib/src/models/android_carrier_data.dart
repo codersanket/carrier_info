@@ -287,7 +287,6 @@ class TelephonyInfo {
   final String isoCountryCode;
 
   /// The cell id (cid) and local area code
-  final CellId cellId;
 
   /// Phone number of the sim
   final String phoneNumber;
@@ -311,7 +310,6 @@ class TelephonyInfo {
     required this.displayName,
     required this.simState,
     required this.isoCountryCode,
-    required this.cellId,
     required this.phoneNumber,
     required this.carrierName,
     required this.subscriptionId,
@@ -343,7 +341,6 @@ class TelephonyInfo {
       displayName: displayName ?? this.displayName,
       simState: simState ?? this.simState,
       isoCountryCode: isoCountryCode ?? this.isoCountryCode,
-      cellId: cellId ?? this.cellId,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       carrierName: carrierName ?? this.carrierName,
       subscriptionId: subscriptionId ?? this.subscriptionId,
@@ -361,7 +358,6 @@ class TelephonyInfo {
       'displayName': displayName,
       'simState': simState,
       'isoCountryCode': isoCountryCode,
-      'cellId': cellId.toMap(),
       'phoneNumber': phoneNumber,
       'carrierName': carrierName,
       'subscriptionId': subscriptionId,
@@ -379,7 +375,6 @@ class TelephonyInfo {
       displayName: map['displayName'] ?? '',
       simState: map['simState'] ?? '',
       isoCountryCode: map['isoCountryCode'] ?? '',
-      cellId: CellId.fromMap(map['cellId'] ?? Map<dynamic, dynamic>()),
       phoneNumber: map['phoneNumber'] ?? '',
       carrierName: map['carrierName'] ?? '',
       subscriptionId: map['subscriptionId'] ?? 0,
@@ -396,7 +391,7 @@ class TelephonyInfo {
 
   @override
   String toString() {
-    return 'TelephonyInfo(networkCountryIso: $networkCountryIso, mobileCountryCode: $mobileCountryCode, mobileNetworkCode: $mobileNetworkCode, displayName: $displayName, simState: $simState, isoCountryCode: $isoCountryCode, cellId: $cellId, phoneNumber: $phoneNumber, carrierName: $carrierName, subscriptionId: $subscriptionId, networkGeneration: $networkGeneration, radioType: $radioType, networkOperatorName: $networkOperatorName)';
+    return 'TelephonyInfo(networkCountryIso: $networkCountryIso, mobileCountryCode: $mobileCountryCode, mobileNetworkCode: $mobileNetworkCode, displayName: $displayName, simState: $simState, isoCountryCode: $isoCountryCode, phoneNumber: $phoneNumber, carrierName: $carrierName, subscriptionId: $subscriptionId, networkGeneration: $networkGeneration, radioType: $radioType, networkOperatorName: $networkOperatorName)';
   }
 
   @override
@@ -410,7 +405,6 @@ class TelephonyInfo {
         other.displayName == displayName &&
         other.simState == simState &&
         other.isoCountryCode == isoCountryCode &&
-        other.cellId == cellId &&
         other.phoneNumber == phoneNumber &&
         other.carrierName == carrierName &&
         other.subscriptionId == subscriptionId &&
@@ -427,7 +421,6 @@ class TelephonyInfo {
         displayName.hashCode ^
         simState.hashCode ^
         isoCountryCode.hashCode ^
-        cellId.hashCode ^
         phoneNumber.hashCode ^
         carrierName.hashCode ^
         subscriptionId.hashCode ^
